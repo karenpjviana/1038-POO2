@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Generic_2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,15 @@ namespace Generic
 {
     internal class Varejo : Empresa
     {
-        public Varejo(string nome, string endereco, string cnpj) : base(nome, endereco, cnpj){ }
-
+        private readonly EnviarNotificacaoWhatsApp enviarNotificacaçãoWhatsapp;
+        public Varejo(string nome, string endereco, string cnpj, EnviarNotificacaoWhatsApp enviarNotificacaçãoWhatsapp) : base(nome, endereco, cnpj)
+        {
+            this.enviarNotificacaçãoWhatsapp = enviarNotificacaçãoWhatsapp;
+        }
         public override void realizarVenda()
         {
             Console.WriteLine("Realizando Venda no varejo");
+            enviarNotificacaçãoWhatsapp.EnviarMensagemCliente();
         }
     }
 }

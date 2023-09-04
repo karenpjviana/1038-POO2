@@ -27,8 +27,9 @@ namespace Generic_2
             Me enviem o repositório no grupo do discord repositorios*/
 
             List<IEmpresa> empresas = new List<IEmpresa>();
+            EnviarNotificacaoWhatsApp enviarNotificacaoWhatsApp = new();
 
-            Empresa varejo = new Varejo("Varejo", "Rua a", "000000000001");
+            Empresa varejo = new Varejo("Varejo", "Rua a", "000000000001", enviarNotificacaoWhatsApp);
             Empresa empreitada = new Empreitada("Empeitada", "Rua b", "000000000002");
 
             empresas.Add(varejo);
